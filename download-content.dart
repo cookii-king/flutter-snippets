@@ -24,3 +24,20 @@
       }
     } else {}
   }
+
+  ```ElevatedButton(
+    onPressed: () async {
+      try {
+        final downloadedZipUrl = await generateContent();
+        print(downloadedZipUrl);
+        await downloadContent(
+          "https://api.your-domain.com/download-content",
+          downloadedZipUrl,
+        );
+      } catch (e) {
+        print('Error: $e');
+        // Handle the error as needed
+      }
+    },
+    child: const Text("Download Content"),
+  ),```
