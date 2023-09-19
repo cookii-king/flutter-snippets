@@ -1,0 +1,3 @@
+Phone Number Examples:
++00 0000 000000
+\+\d{1,3}\s\d{4}\s\d{6}
