@@ -1,6 +1,6 @@
 async function generateAccessToken() {
   return new Promise((resolve, reject) => {
-    const key = require("./arena-squads-key.json");
+    const key = require("./File.json");
     const jwtClient = new google.auth.JWT(
         key.client_email,
         null,
@@ -22,10 +22,10 @@ generateAccessToken().then((token) => {
   console.log("Generated Access Token:", token); // Log the token
   const accessToken = token;
   async function sendDirectMessage() {
-    const url = `${base}/v1/projects/arena-squads/messages:send`;
+    const url = `${base}/v1/projects/your-project/messages:send`;
     const payload = {
       message: {
-        token: "fZ-oWqSWkaa0iIU_AJADZS:APA91bGmjXNGCUeXyPmqrvy020glS_v7LVlV-UqHM1Gpq1ttaeuNHLK6uJLWzBBIxzxDhykC-WuEq_z_1ESsbdM5ZPolSaKFQy9LgSwGxarcX24ZCQI96Bqd7Om1Ujwhb4tn28QLBrKf",
+        token: "fcm-token",
         notification: {
           title: "Hello World!",
           body: "This is a test to see if notifications are working...",
